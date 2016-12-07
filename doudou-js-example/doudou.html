@@ -1,0 +1,31 @@
+<html>
+  <head>
+  <title>Exemple Doudou JS</title>
+
+  <script type="text/javascript" src="../doudou.js"/></script>
+  <script type="text/javascript">
+
+	function valider(){
+		beforeValidation();
+		
+		validateField(document.forms[0].nom, "On te demande ton nom !");
+		validateField(document.forms[0].prenom, "On te demande ton prenom !");
+		validateField(document.forms[0].dateNaissance, "On te demande ta date de naissance !");
+		
+		if (hasNoErrors()){
+			alert("C'est bien poussin !");
+		}
+	}
+  </script>
+  </head>
+  
+  <body>
+	<form method="GET" >
+		Votre nom : <input type="text" id="nom"/><br/>
+		Votre Prénom : <input type="text" id="prenom"/><br/>
+		Votre Date de naissance : <input type="text" id="dateNaissance"/><br/>
+		<input type="button" onclick="valider();return false;" value='Valider!' /><br/>
+	</form>
+	<textarea id="erreurs" cols="50" rows="4"></textarea>
+	
+  </body>
